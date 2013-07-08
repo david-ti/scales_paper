@@ -18,16 +18,31 @@
 \maketitle
 \onehalfspacing
 \section{Background}
-This work considers the implications of using the methodology described in \citeA{domingue2013} to further analyze the hierarchy of models discussed in \citeA{torres2012}. The models in \citeA{torres2012}, see Figure \ref{orig}, support inference at different levels. For example, the MON, IIO, and DM models all allow for the ordering of items and persons. The LCR and RSH models are more powerful in that they allow for differences in quantity. This additional power comes at a cost. Data fit with the latter models must be consistent with axioms known (thanks to \citeNP{luce1964}) to allow for the creation of an interval scale. In this study, we consider only the axioms of single and double cancellation.\footnote{The higher-order axioms of solvability and the Archimedean condition are typically impossible to verify in practice.} The methodology developed in \citeA{domingue2013} and implemented in \citeA{conjointchecks} describes a procedure for checking the consistency of educational measurement data (dichotomously coded responses to items from persons) with these axioms. 
+This work considers the application of the methodology described in \citeA{domingue2013} to the model selection framework presented by \citeA{torres2012} as an alternative, and more generally applicable, method for identifying the correct generating model of a dataset.
 
-NEED TO EXPLAIN HERE IN GREATER DETAIL HOW THE FIGURE AND THE AXIOMS GO TOGETHER.
+In their model selection framework \citeA{torres2012} arrange a set of latent variable models, including latent class models (\textsc{lca}; Lazarasfeld & Henry, 1968), ordered latent class models (\textsc{olca}; Croon, 1990), latent class Rasch models (\textsc{lcr}; Formann, 1985) and Rasch models (\textsc{rsh}; Rasch, 1960), according to their assumed latent structure such that progressively more stringent monotonicity and scale assumptions are placed on the latent variable. 
+
 \begin{figure}
 \centering
-\caption{put nice version from original paper here?} \label{orig}
-\includegraphics[width=\textwidth]{./figs/hierarchy}
+\caption{Tenable Assessment Model Selection Framework} \label{orig}
+\includegraphics[width=\textwidth]{./figs/TAmodelframework.pdf}
 \end{figure}
 
-The hierarchy discussed in \citeA{torres2012} leads to several natural hypotheses regarding violations. These are:
+Accordingly, these models confor a hierarchy where different levels are support different kinds of inference:
+
+\begin{itemize}
+	\item \textsc{lca} allows qualitative distinctions between groups.
+	\item \textsc{olca} support ordinal inference about persons (when class monotonicity is enforced), items (when invariate item ordering is imposed), or both items and persons (when double monotonicity is applied).
+	\item \textsc{lcr} and \textsc{rsh} entail inferences about quantiative differences.
+\end{itemize}
+
+The jump from qualitative groups to ordinal levels, and from ordinal levels to quantative differences comes at the additional cost of consireably more stringent assumpations. For data to adequately fit with the latter models, it must be consistent with the the axioms of single (in the case of ordinal models)and double cancellation as described by the theory of additive conjoint measurement (\textsc{adm}; \citeNP{luce1964})\footnote{The higher-order axioms of solvability and the Archimedean condition are typically impossible to verify in practice.}.
+
+The methodology developed by \citeA{domingue2013} and implemented in \citeA{conjointchecks} describes a procedure for checking the consistency of such axioms, and presents a more flexible alternative to the \textsc{bic} based model selection criteria originally used by \citeA{torres2012}, supporting the use of the tenable assessment model selection framework on datasets with larger number of items.
+
+\subsection{Examining Cancelation Axioms}
+
+The Tenable Assessment framework \citep{torres2012} leads to several natural hypotheses regarding potential violations to the \textsc{acm} cancelation axioms:
 \begin{enumerate}
 \item The UN model, since it can be fit to purely nominal data, should yield the most violations.
 \item At least superficially, there is no reason that there should be substantial differences in the number of detected violations between the MON and IIO models since they each support only a single version of the single cancellation axiom.
@@ -36,7 +51,7 @@ The hierarchy discussed in \citeA{torres2012} leads to several natural hypothese
 \end{enumerate}
 Note that from the point-of-view of the hierarchy given in Figure \ref{orig}, there should be no difference in the findings with respect to the axioms between the LCR and RSH models. However, there is clearly an important difference between the two since the former allows for only a discrete number of classes while the latter allows for a continuum of scores. 
 
-The key question investigated in this paper is whether these hypotheses hold when the methodology from \citeA{domingue2013} is applied to the hierarchy of models. When the hypotheses do not hold, additional investigations may be in order. For example, it will be seen that the MON and IIO models produce quite different numbers of axiom violations and this leads us to ask what it is about these models that causes this difference. Alternatively, a failure to find evidence that supports the hypotheses related to double cancellation leads us to argue that checking for double cancellation is probably an intractable problem given the ``messy'' nature of the data in question.
+If these hypotheses hold, then the methodology from \citeA{domingue2013} would provide a fairly simple and convenient criteria to conduct a model selection procedure under the Tenable Assessment Framework. However, the results discussed in this paper do not seem to fully meet the original expectiations, prompting additional investagation. For example, it will be seen that the MON and IIO models produce quite different numbers of axiom violations and this leads us to ask what it is about these models that causes this difference. Alternatively, a failure to find evidence that supports the hypotheses related to double cancellation leads us to argue that checking for double cancellation is probably an intractable problem given the ``messy'' nature of the data in question.
 
 \section{Models}
 describe the models in the scale hierarchy. 
